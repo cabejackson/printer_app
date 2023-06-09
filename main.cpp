@@ -24,9 +24,15 @@ public:
 int main(){
 
     Printer myPrinter("HP DeskJet 1234", 10);
-    myPrinter.Print("Hello, my name is Cabe. I am a Software Engineer!");
-    myPrinter.Print("Hello, my name is Cabe. I am a Software Engineer!");
-    myPrinter.Print("Hello, my name is Cabe. I am a Software Engineer!");
+    try {
+        myPrinter.Print("Hello, my name is Cabe. I am a Software Engineer!");
+        myPrinter.Print("Hello, my name is Cabe. I am a Software Engineer!");
+        myPrinter.Print("Hello, my name is Cabe. I am a Software Engineer!");
+    }
+    catch(const char* txtException){
+        cout << "Exception: " << txtException << endl;
+
+    }
 
     return 0;
 }
