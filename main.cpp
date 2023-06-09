@@ -11,11 +11,11 @@ public:
         _availablePaper = availablePaper;
     }
     void Print(string txtDoc) {
-        int requiredPaper = txtDoc.length() / 10; //aka 40letters/10 = 4 pgs
+        int requiredPaper = txtDoc.length() / 10; //aka 40chars/10chars = 4 pgs
 
         if(requiredPaper > _availablePaper)
-            // throw "No Paper";
-            throw 101;
+            throw "No Paper";
+            // throw 101;
        
         cout << "Printing..." << txtDoc << endl;
         _availablePaper -= requiredPaper;
@@ -34,10 +34,10 @@ int main(){
         cout << "Exception: " << txtException << endl;
 
     }
-    // catch (int exCode) {
-    //     cout << "Exception: " << exCode << endl;
-    // }    
-    //defualt exception
+    catch (int exCode) {
+        cout << "Exception: " << exCode << endl;
+    }    
+    // default exception
     catch(...){
         cout << "Exception happened" << endl;
     }
