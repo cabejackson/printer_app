@@ -14,7 +14,8 @@ public:
         int requiredPaper = txtDoc.length() / 10; //aka 40letters/10 = 4 pgs
 
         if(requiredPaper > _availablePaper)
-            throw "No Paper";
+            // throw "No Paper";
+            throw 101;
        
         cout << "Printing..." << txtDoc << endl;
         _availablePaper -= requiredPaper;
@@ -32,6 +33,9 @@ int main(){
     catch(const char* txtException){
         cout << "Exception: " << txtException << endl;
 
+    }
+    catch (int exCode) {
+        cout << "Exception: " << exCode << endl;
     }
 
     return 0;
