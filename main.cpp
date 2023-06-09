@@ -11,13 +11,21 @@ public:
         _availablePaper = availablePaper;
     }
     void Print(string txtDoc) {
+        int requiredPaper = txtDoc.length() / 10; //aka 40letters/10 = 4 pgs
+
+        if(requiredPaper > _availablePaper)
+            throw "No Paper";
+       
         cout << "Printing..." << txtDoc << endl;
+        _availablePaper -= requiredPaper;
     }
 };
 
 int main(){
 
     Printer myPrinter("HP DeskJet 1234", 10);
+    myPrinter.Print("Hello, my name is Cabe. I am a Software Engineer!");
+    myPrinter.Print("Hello, my name is Cabe. I am a Software Engineer!");
     myPrinter.Print("Hello, my name is Cabe. I am a Software Engineer!");
 
     return 0;
