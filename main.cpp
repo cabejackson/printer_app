@@ -34,8 +34,12 @@ int main(){
         cout << "Exception: " << txtException << endl;
 
     }
-    catch (int exCode) {
-        cout << "Exception: " << exCode << endl;
+    // catch (int exCode) {
+    //     cout << "Exception: " << exCode << endl;
+    // }    
+    //defualt exception
+    catch(...){
+        cout << "Exception happened" << endl;
     }
 
     return 0;
